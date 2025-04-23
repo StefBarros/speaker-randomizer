@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speaker Presentation Randomizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Main container to center all content -->
+    <div class="container">
+        <!-- App title -->
+        <h1>Speaker Presentation Randomizer</h1>
+
+        <!-- Timer section -->
+        <div class="timer-section">
+            <h2>Presentation Timer</h2>
+            <div class="timer-display">
+                <span id="minutes">05</span>:<span id="seconds">00</span>
+            </div>
+            <div class="timer-presets">
+                <button class="timer-preset-btn" data-seconds="30">30s</button>
+                <button class="timer-preset-btn" data-seconds="90">90s</button>
+                <button class="timer-preset-btn" data-seconds="180">3m</button>
+                <button class="timer-preset-btn" data-seconds="300">5m</button>
+            </div>
+            <div class="timer-controls">
+                <button id="startTimerBtn">Start Timer</button>
+                <button id="resetTimerBtn">Reset Timer</button>
+            </div>
+        </div>
+
+        <!-- Input section for speaker names -->
+        <div class="input-section">
+            <label for="studentList">Enter Speaker Names (one per line):</label>
+            <textarea 
+                id="studentList" 
+                rows="10" 
+                placeholder="Alice Smith&#10;Bob Johnson&#10;Charlie Brown"></textarea>
+        </div>
+
+        <!-- Control buttons for picking speakers and resetting -->
+        <div class="controls">
+            <button id="pickStudentBtn" class="primary-btn">Pick Next Speaker</button>
+            <button id="resetBtn" class="secondary-btn">Reset List</button>
+        </div>
+
+        <!-- Section to display the selected speaker -->
+        <div class="result-section">
+            <h2>Current Speaker:</h2>
+            <p id="selectedStudentDisplay">- - -</p>
+        </div>
+
+        <!-- History section showing previous speakers -->
+        <div class="history-section">
+            <h2>Presentation History</h2>
+            <div id="presentationHistory" class="history-list">
+                <!-- History items will be added here dynamically -->
+            </div>
+        </div>
+
+        <!-- Status section showing remaining and chosen counts -->
+        <div class="status-section">
+            <p>Speakers remaining: <span id="remainingCount">0</span></p>
+            <p>Speakers presented: <span id="chosenCount">0</span></p>
+        </div>
+    </div>
+
+    <!-- Link to JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>

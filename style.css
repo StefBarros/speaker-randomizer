@@ -1,0 +1,242 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #e6f3ff; /* Light blue background */
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Main container for all content */
+.container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 90%;
+    max-width: 500px;
+}
+
+/* Main heading styles */
+h1 {
+    color: #1a4b8c; /* Deep blue color */
+    margin-bottom: 25px;
+    font-size: 28px;
+}
+
+/* Subheading styles */
+h2 {
+    color: #7e57c2; /* Lighter purple color */
+    margin: 20px 0;
+    font-size: 22px;
+}
+
+/* Timer section styles */
+.timer-section {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+.timer-display {
+    font-size: 48px;
+    font-weight: bold;
+    color: #2c3e50;
+    margin: 15px 0;
+    font-family: monospace;
+}
+
+/* Timer preset buttons */
+.timer-presets {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin: 15px 0;
+}
+
+.timer-preset-btn {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.timer-preset-btn:hover {
+    background-color: #5a6268;
+    transform: translateY(-1px);
+}
+
+.timer-preset-btn.active {
+    background-color: #28a745;
+}
+
+.timer-controls {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+/* Student list textarea styles */
+#studentList {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #c5d9e8; /* Light grey-blue border */
+    border-radius: 8px;
+    font-size: 16px;
+    margin: 10px 0 20px;
+    resize: vertical;
+}
+
+/* Button styles */
+button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 25px; /* Pill-shaped corners */
+    font-size: 16px;
+    cursor: pointer;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+.primary-btn {
+    background-color: #4CAF50; /* Green for primary actions */
+    color: white;
+}
+
+.primary-btn:hover {
+    background-color: #45a049;
+}
+
+.secondary-btn {
+    background-color: #ff9f43; /* Orange for secondary actions */
+    color: white;
+}
+
+.secondary-btn:hover {
+    background-color: #ff8f00;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* Selected student display styles */
+#selectedStudentDisplay {
+    font-size: 24px;
+    font-weight: bold;
+    color: #00bcd4; /* Bright teal color */
+    margin-top: 20px;
+    min-height: 40px;
+    padding: 15px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+}
+
+/* History section styles */
+.history-section {
+    margin: 25px 0;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+}
+
+.history-list {
+    max-height: 200px;
+    overflow-y: auto;
+    text-align: left;
+    padding: 10px;
+}
+
+.history-item {
+    padding: 8px 12px;
+    margin: 5px 0;
+    background-color: white;
+    border-radius: 5px;
+    border-left: 4px solid #4CAF50;
+    font-size: 14px;
+}
+
+/* Status section styles */
+.status-section {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.status-section p {
+    color: #546e7a; /* Greyish blue text */
+    font-size: 14px;
+    margin: 8px 0;
+}
+
+.status-section span {
+    font-weight: bold;
+    color: #37474f; /* Darker text for numbers */
+}
+
+/* Label styles */
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: #546e7a; /* Greyish blue text */
+    font-weight: bold;
+    text-align: left;
+}
+
+/* Input section container */
+.input-section {
+    margin-bottom: 20px;
+}
+
+/* Controls section container */
+.controls {
+    margin: 20px 0;
+}
+
+/* Result section container */
+.result-section {
+    margin: 25px 0;
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+    }
+
+    .timer-display {
+        font-size: 36px;
+    }
+
+    .timer-presets {
+        flex-wrap: wrap;
+    }
+
+    .timer-preset-btn {
+        flex: 1 1 calc(50% - 10px);
+    }
+
+    button {
+        width: 100%;
+        margin: 5px 0;
+    }
+} 
