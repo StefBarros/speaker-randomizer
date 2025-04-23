@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +9,17 @@
 <body>
     <!-- Main container to center all content -->
     <div class="container">
+        <!-- Theme toggle -->
+        <div class="theme-switch-wrapper">
+            <label class="theme-switch" for="checkbox">
+                <input type="checkbox" id="checkbox" />
+                <div class="slider round">
+                    <span class="moon">🌙</span>
+                    <span class="sun">☀️</span>
+                </div>
+            </label>
+        </div>
+
         <!-- App title -->
         <h1>Speaker Presentation Randomizer</h1>
 
@@ -32,6 +43,24 @@
 
         <!-- Input section for speaker names -->
         <div class="input-section">
+            <div class="list-controls">
+                <div class="saved-lists">
+                    <label for="savedLists">Saved Lists:</label>
+                    <div class="saved-lists-controls">
+                        <select id="savedLists">
+                            <option value="">Select a saved list...</option>
+                        </select>
+                        <button id="deleteListBtn" class="icon-btn" title="Delete selected list">
+                            🗑️
+                        </button>
+                    </div>
+                </div>
+                <div class="file-upload">
+                    <label for="csvFile">Upload CSV:</label>
+                    <input type="file" id="csvFile" accept=".csv" />
+                </div>
+                <button id="saveListBtn" class="secondary-btn">Save Current List</button>
+            </div>
             <label for="studentList">Enter Speaker Names (one per line):</label>
             <textarea 
                 id="studentList" 
