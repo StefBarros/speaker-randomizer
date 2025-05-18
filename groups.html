@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group Randomizer - Speaker Presentation Randomizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Main container to center all content -->
+    <div class="container">
+        <!-- Theme toggle -->
+        <div class="theme-switch-wrapper">
+            <label class="theme-switch" for="checkbox">
+                <input type="checkbox" id="checkbox" />
+                <div class="slider round">
+                    <span class="moon">🌙</span>
+                    <span class="sun">☀️</span>
+                </div>
+            </label>
+        </div>
+
+        <!-- App title -->
+        <h1>Group Randomizer</h1>
+
+        <!-- Navigation -->
+        <div class="navigation">
+            <a href="index.html" class="secondary-btn navigation-btn">← Back to Main</a>
+        </div>
+
+        <!-- Input section for speaker names -->
+        <div class="input-section">
+            <div class="list-controls">
+                <div class="saved-lists">
+                    <label for="savedLists">Saved Lists:</label>
+                    <div class="saved-lists-controls">
+                        <select id="savedLists">
+                            <option value="">Select a saved list...</option>
+                        </select>
+                        <button id="deleteListBtn" class="icon-btn" title="Delete selected list">
+                            🗑️
+                        </button>
+                    </div>
+                </div>
+                <div class="file-upload">
+                    <label for="csvFile">Upload CSV:</label>
+                    <input type="file" id="csvFile" accept=".csv" />
+                </div>
+                <button id="saveListBtn" class="secondary-btn">Save Current List</button>
+            </div>
+            <label for="studentList">Enter Names (one per line):</label>
+            <div class="name-count-display">
+                Total Names: <span id="nameCount">0</span>
+            </div>
+            <textarea 
+                id="studentList" 
+                rows="10" 
+                placeholder="Alice Smith&#10;Bob Johnson&#10;Charlie Brown"></textarea>
+        </div>
+
+        <!-- Group Randomization section -->
+        <div class="group-section">
+            <h2>Create Random Groups</h2>
+            <div class="group-controls">
+                <div class="group-inputs">
+                    <div class="form-group">
+                        <label for="groupSize">Group Size:</label>
+                        <input type="number" id="groupSize" min="2" value="3">
+                    </div>
+                    <div class="form-group">
+                        <label for="groupCount">Number of Groups:</label>
+                        <input type="number" id="groupCount" min="1" value="1">
+                    </div>
+                </div>
+                <div class="name-count-display">
+                    Available Names: <span id="nameCount">0</span>
+                </div>
+                <div class="auto-group-suggestions">
+                    <h3>Suggested Group Sizes</h3>
+                    <div id="groupSuggestions" class="suggestion-buttons">
+                        <!-- Suggestions will be added here dynamically -->
+                    </div>
+                </div>
+                <button id="createGroupsBtn" class="primary-btn">Create Random Groups</button>
+            </div>
+            <div id="groupResults" class="group-results">
+                <!-- Groups will be displayed here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Link to JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html> 

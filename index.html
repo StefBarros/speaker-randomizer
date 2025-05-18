@@ -26,6 +26,25 @@
         <!-- Timer section -->
         <div class="timer-section">
             <h2>Presentation Timer</h2>
+            
+            <!-- Presentation Type Selection -->
+            <div class="presentation-type-section">
+                <div class="type-controls">
+                    <div class="type-select">
+                        <label for="presentationType">Presentation Type:</label>
+                        <select id="presentationType">
+                            <option value="">Select type...</option>
+                        </select>
+                    </div>
+                    <button id="addTypeBtn" class="secondary-btn" title="Add new presentation type">
+                        Add Type
+                    </button>
+                </div>
+                <div id="typeInstructions" class="type-instructions">
+                    <!-- Instructions will be displayed here -->
+                </div>
+            </div>
+
             <div class="timer-display">
                 <span id="minutes">05</span>:<span id="seconds">00</span>
             </div>
@@ -62,6 +81,9 @@
                 <button id="saveListBtn" class="secondary-btn">Save Current List</button>
             </div>
             <label for="studentList">Enter Speaker Names (one per line):</label>
+            <div class="name-count-display">
+                Total Names: <span id="nameCount">0</span>
+            </div>
             <textarea 
                 id="studentList" 
                 rows="10" 
@@ -72,6 +94,7 @@
         <div class="controls">
             <button id="pickStudentBtn" class="primary-btn">Pick Next Speaker</button>
             <button id="resetBtn" class="secondary-btn">Reset List</button>
+            <a href="groups.html" class="primary-btn navigation-btn">Group Options</a>
         </div>
 
         <!-- Section to display the selected speaker -->
