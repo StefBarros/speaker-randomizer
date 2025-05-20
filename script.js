@@ -176,6 +176,15 @@ function loadCurrentList() {
     if (savedList) {
         speakerList.value = savedList;
         initializeLists();
+        
+        // Update the saved lists dropdown to show the current list
+        if (savedListsSelect) {
+            const savedLists = JSON.parse(localStorage.getItem('speakerLists') || '{}');
+            const currentListName = Object.keys(savedLists).find(name => savedLists[name] === savedList);
+            if (currentListName) {
+                savedListsSelect.value = currentListName;
+            }
+        }
     }
 }
 
