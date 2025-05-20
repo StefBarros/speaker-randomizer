@@ -122,6 +122,14 @@ function handleCSVUpload(file) {
             // Update the saved lists dropdown
             updateSavedListsDropdown();
             
+            // Update name count displays
+            updateNameCount();
+            
+            // Enable the save button
+            if (saveListBtn) {
+                saveListBtn.disabled = false;
+            }
+            
         } catch (error) {
             alert('Error reading CSV file: ' + error.message);
         }
@@ -274,7 +282,7 @@ function showTimerEndOverlay() {
     
     // Handle continue button click
     document.getElementById('continueBtn').addEventListener('click', () => {
-        location.reload(); // Refresh the page
+        overlay.remove(); // Remove the overlay instead of reloading the page
     });
 }
 
@@ -551,6 +559,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Update presentation types dropdown if on main page
     if (presentationType) {
         updatePresentationTypeDropdown();
+    }
+    
+    // Initialize save button state
+    if (saveListBtn) {
+        saveListBtn.disabled = !speakerList.value.trim();
     }
 });
 
