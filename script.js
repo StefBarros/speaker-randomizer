@@ -357,7 +357,7 @@ function calculateGroupSuggestions(totalNames) {
  * Updates the group suggestions display
  */
 function updateGroupSuggestions() {
-    const totalNames = parseInt(document.getElementById('nameCount').textContent) || 0;
+    const totalNames = parseInt(document.getElementById('totalNameCount')?.textContent || '0') || 0;
     const suggestions = calculateGroupSuggestions(totalNames);
     const suggestionsContainer = document.getElementById('groupSuggestions');
     
@@ -396,12 +396,18 @@ function updateNameCount() {
         .map(name => name.trim())
         .filter(name => name.length > 0);
     
-    const nameCountDisplay = document.getElementById('nameCount');
-    if (nameCountDisplay) {
-        nameCountDisplay.textContent = names.length;
-        // Update group suggestions when name count changes
-        updateGroupSuggestions();
+    const totalNameCountDisplay = document.getElementById('totalNameCount');
+    const availableNameCountDisplay = document.getElementById('availableNameCount');
+    
+    if (totalNameCountDisplay) {
+        totalNameCountDisplay.textContent = names.length;
     }
+    if (availableNameCountDisplay) {
+        availableNameCountDisplay.textContent = names.length;
+    }
+    
+    // Update group suggestions when name count changes
+    updateGroupSuggestions();
 }
 
 /**
